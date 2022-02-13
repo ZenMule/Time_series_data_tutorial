@@ -1,0 +1,98 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 4.68530612244898 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Syllables" 
+        xmin = 0 
+        xmax = 4.68530612244898 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.2941863830513564 
+            text = "" 
+        intervals [2]:
+            xmin = 0.2941863830513564 
+            xmax = 0.7276422833015612 
+            text = "thi45" 
+        intervals [3]:
+            xmin = 0.7276422833015612 
+            xmax = 2.475251700680272 
+            text = "" 
+        intervals [4]:
+            xmin = 2.475251700680272 
+            xmax = 2.8910072384121044 
+            text = "s" 
+        intervals [5]:
+            xmin = 2.8910072384121044 
+            xmax = 4.137544456379043 
+            text = "" 
+        intervals [6]:
+            xmin = 4.137544456379043 
+            xmax = 4.471113656346892 
+            text = "s" 
+        intervals [7]:
+            xmin = 4.471113656346892 
+            xmax = 4.68530612244898 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Segments" 
+        xmin = 0 
+        xmax = 4.68530612244898 
+        intervals: size = 4 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.2941863830513564 
+            text = "" 
+        intervals [2]:
+            xmin = 0.2941863830513564 
+            xmax = 0.4109305055187449 
+            text = "th" 
+        intervals [3]:
+            xmin = 0.4109305055187449 
+            xmax = 0.7276422833015612 
+            text = "i" 
+        intervals [4]:
+            xmin = 0.7276422833015612 
+            xmax = 4.68530612244898 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "Vowels" 
+        xmin = 0 
+        xmax = 4.68530612244898 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.4109305055187449 
+            text = "" 
+        intervals [2]:
+            xmin = 0.4109305055187449 
+            xmax = 0.6739207495841407 
+            text = "t45" 
+        intervals [3]:
+            xmin = 0.6739207495841407 
+            xmax = 2.567972421626723 
+            text = "" 
+        intervals [4]:
+            xmin = 2.567972421626723 
+            xmax = 2.827578014358571 
+            text = "t45" 
+        intervals [5]:
+            xmin = 2.827578014358571 
+            xmax = 4.218316877778083 
+            text = "" 
+        intervals [6]:
+            xmin = 4.218316877778083 
+            xmax = 4.39814685708652 
+            text = "t45" 
+        intervals [7]:
+            xmin = 4.39814685708652 
+            xmax = 4.68530612244898 
+            text = "" 

@@ -1,0 +1,86 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 4.7628117913832195 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Syllables" 
+        xmin = 0 
+        xmax = 4.7628117913832195 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.5715468206870725 
+            text = "" 
+        intervals [2]:
+            xmin = 0.5715468206870725 
+            xmax = 1.3328123881131402 
+            text = "s" 
+        intervals [3]:
+            xmin = 1.3328123881131402 
+            xmax = 1.9859448223733938 
+            text = "" 
+        intervals [4]:
+            xmin = 1.9859448223733938 
+            xmax = 2.619484756865709 
+            text = "s" 
+        intervals [5]:
+            xmin = 2.619484756865709 
+            xmax = 3.601888650196921 
+            text = "" 
+        intervals [6]:
+            xmin = 3.601888650196921 
+            xmax = 4.166386459345643 
+            text = "s" 
+        intervals [7]:
+            xmin = 4.166386459345643 
+            xmax = 4.7628117913832195 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Segments" 
+        xmin = 0 
+        xmax = 4.7628117913832195 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 4.7628117913832195 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "Vowels" 
+        xmin = 0 
+        xmax = 4.7628117913832195 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.9088633183769963 
+            text = "" 
+        intervals [2]:
+            xmin = 0.9088633183769963 
+            xmax = 1.2785438024975249 
+            text = "t13" 
+        intervals [3]:
+            xmin = 1.2785438024975249 
+            xmax = 2.2494725904737454 
+            text = "" 
+        intervals [4]:
+            xmin = 2.2494725904737454 
+            xmax = 2.59390731292517 
+            text = "t13" 
+        intervals [5]:
+            xmin = 2.59390731292517 
+            xmax = 3.834630239297928 
+            text = "" 
+        intervals [6]:
+            xmin = 3.834630239297928 
+            xmax = 4.130617460942136 
+            text = "t13" 
+        intervals [7]:
+            xmin = 4.130617460942136 
+            xmax = 4.7628117913832195 
+            text = "" 

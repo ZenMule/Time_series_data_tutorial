@@ -1,0 +1,217 @@
+---
+title: "Analyzing time-series phonetic data"
+author: "Miao"
+date: "2/7/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+This tutorial aims to give students a rough idea of the entire progress of analyzing time-series data in phonetics. Now let's turn to data importing, cleaning, and plotting in R.
+
+The raw F0 and formant data can be obtained by using the praat scripts that I put in the praat_scripts folder. Feel free to run the scripts to measure F0 and formants. However, all the data we need in R are already available in the data folder.
+
+First, we need to load tidyverse and cowplot packages. If you haven't got tidyverse and cowplot, use the code below to install them.
+
+```{r install tidyverse}
+#install.packages("tidyverse") #Uncomment this one by deleting the # at the beginning of the line if you want to install tidyverse.
+#install.packages("cowplot") #Same as above
+```
+
+Load them into the working environment.
+
+```{r load tidyverse, message=F}
+library(tidyverse)
+library(cowplot)
+```
+
+Let's take a look at the f0 data first.
+
+# F0
+
+## Data import
+
+Now we first need to import the data. We are going to use the function read_delim() from readr package which is a part of tidyverse. Because the data is delimited by tab, we will specify the 'delim' to "\\\\t" which means "tab". By putting parentheses around the entire codes below, We are able to not only run the codes but also let R show the result, even when you saved the results to an R object.
+
+```{r import data}
+(f0_data <- read_delim("data/tones_f0t.txt", delim = "\t", col_types = cols(
+  Segment = col_factor() #The Segment column is the column that includes the information of different tones so it should be formatted to factors instead of characters as in read_delim() default. 
+)) %>% #
+  rename(Tone = Segment)) #Rename Segment column to Tone.
+```
+
+Now we can take a look at the structure and the overall summary of the dataset by using either glimpse() and summary(), respectively.
+
+```{r glimpse the dataset}
+glimpse(f0_data)
+```
+
+```{r summarize the dataset}
+summary(f0_data)
+```
+
+We can see that the data type of each column is given in the result of glimpse(). The Segment column was correctly parsed as factors ("<fct>").
+
+Next step, we are going to normalize the F0 data across speakers. Since we are more interested in the overall tonal contour across speakers without caring too much about the variability due to anatomical differences among individuals (different vocal folds length or stiffness, different vocal tract shape or length, etc.), normalizing the F0 data for each speaker is a common practice in phonetic studies.
+
+To normalize the F0 values by using z-score normalization, we will need to modify the dataset first. To modify the dataset, we will use the function mutate() from dplyr package of tidyverse. mutate() creates new columns as you specify in the call. You can create new columns by using information from other columns. We will need to log-transform raw f0 data and z-score it for each speaker.
+
+Since we do not have the column ready for speaker, and since the speaker information is saved in the column File_name in the format "XXX_xxxx", we need to use the function separate() from tidyr package of tidyverse first.
+
+```{r normalize the data}
+(f0_data_1 <- separate(f0_data,
+                    col = File_name,
+                    into = c("Speaker", "Syllable"), #Separate them into two columns, one is named to Speaker, the other Syllable
+                    sep = "_"))
+```
+
+Then we can use mutate() to normalize f0 data.
+
+```{r normalize f0}
+(f0_data_norm <- mutate(group_by(f0_data_1, Speaker), #Group the data by Speaker so that the average will only be taken within each speaker's data.
+                       F0_log = log(F0),
+                       F0_norm = (F0_log - mean(F0_log, na.rm = T))/sd(F0_log, na.rm = T) #Use na.rm = T to get rid of NAs, otherwise R will not calculate the standard deviation.
+                       ) %>%
+  ungroup()) #After all are done, ungroup the data (this step is not obligatory, but I personally like to ungroup it.)
+```
+
+Now let's take a look at the data again.
+
+```{r f0 data again}
+glimpse(f0_data_norm)
+```
+
+## Plot the time-series F0 data
+
+Let's plot it!
+
+```{r create the plotting space}
+#Make sure you have a visual understanding of what we are plotting. What data are on the x- and y-axis?
+ggplot(f0_data_norm,
+       aes(x = t, #specify time on the x axis
+           y = F0_norm) #normalized F0
+       )
+```
+
+```{r scatter plot}
+#Plot f0 data point on the plotting space.
+ggplot(f0_data_norm,
+       aes(x = t, y = F0_norm,
+           color = Tone) 
+       ) +
+  geom_jitter()
+```
+
+But this is a little bit too messy, and we actually want to put each tone in separate panels. This can be achieved by using facet_wrap() or facet_grid() function from ggplot2.
+
+```{r by tones}
+ggplot(f0_data_norm,
+       aes(x = t, y = F0_norm) 
+       ) +
+  geom_jitter(aes(color = Tone)) +
+  facet_wrap(~ Tone)
+```
+
+Can we improve plot by adding smoothing line to each tone?
+
+```{r add smoothing, warning=F, message=F}
+ggplot(f0_data_norm,
+       aes(x = t, y = F0_norm) 
+       ) +
+  geom_jitter(aes(color = Tone), alpha = .3) + #add different color to each tone, and make the color of dots lighter
+  geom_smooth(color = "grey30") + 
+  facet_wrap(~ Tone)
+```
+
+We can also choose to hide all the points and just plot the smoothing lines of the tones in one single panel.
+
+```{r only lines}
+ggplot(f0_data_norm,
+       aes(x = t, y = F0_norm) 
+       ) +
+  geom_smooth(aes(color = Tone)) +  #Now we need to specify color for the smooths
+  facet_wrap(~ Tone)
+```
+
+If you are interested in the cross-speaker variability, we can also plot the raw f0 data and put the data from each speaker in different panels.
+
+```{r by speaker, warning=F}
+ggplot(f0_data_norm,
+       aes(x = t, y = F0) #Use F0 instead of F0_norm
+       ) +
+  geom_smooth(aes(color = Tone)) +
+  facet_wrap(~ Speaker) #Now we facet the data by Speaker
+```
+
+As you can see, there seems to be lots of inter-speaker variablity that is worth further investigation by taking more data from more speakers.
+
+## Formants
+Formant data are pretty much just the same, but there is one single difference: while there is only one dependent variable F0() that is to be plotted on the y-axis, there are multiple dependent variables (usually, F1 and F2, occasionally F3) in formant data set. There are two alternative ways to plot them.
+
+# Data import and cleaning
+
+First of all, we still need to import the data into R. Since we have multiple files in the data folder, I wrote a function to read in multiple data files into R at once. You can check the detail of it by opening the script. Now let's load the function into the current working environment.
+
+```{r load read formant function}
+source("r_scripts/read_formant.R")
+```
+
+We then will create a list of files in the vowel folder under data folder.
+
+```{r create file list}
+file_list <- list.files(path = "data/vowel", pattern = "*.txt", full.names = T)
+```
+
+Then we can use the lapply() function to apply the function I wrote to import all the data by applying read_formant() function to each of the file in the vowel folder. (lapply basically means "apply to list")
+
+```{r import all formant data, message=F, warning=F}
+# Merge all data into one dataset
+(formant <- lapply(file_list, read_formant) %>% reduce(bind_rows))
+```
+
+```{r glimpse the formant data}
+glimpse(formant)
+```
+
+# Plot formant data
+
+## Plot different formants as different dependent variables
+The first way is to use multiple geom_smooth() calls but specify different y values in aes().
+
+```{r Formant, warning=F}
+ggplot(formant,
+       aes(x = t, y = F1)) +
+  geom_smooth(aes(color = Tone), linetype = 1) + # Plot F1 smooth lines
+  geom_smooth(aes(y = F2, color = Tone), linetype = 2) + # Plot F2 smooth lines
+  facet_grid(Seg ~ Tone) +
+  xlim(3, 27) + # the formant values from the very beginning and end of the segements are usually unreliable
+  coord_cartesian(ylim = c(300,2600)) +
+  theme_minimal_hgrid() #Use the minimal horizontal grid theme from cowplot package
+```
+
+The other way is to transform the data and make all formant data in one column: "Hz".
+
+```{r transform the formant data}
+(formant_2 <- formant %>% 
+  select(-F3, -F4, -COG, -sdev, -skew, -kurt) %>% # Get rid of F3, F4, and spectral data.
+  pivot_longer(cols = c("F1", "F2"), names_to = "Formant", values_to = "Hz"))
+```
+```{r glimpse transformed formant data}
+glimpse(formant_2)
+```
+
+Now we only need one geom_smooth() call to plot both formants.
+
+```{r plot formant again, warning=F}
+ggplot(formant_2,
+       aes(x = t, y = Hz)) +
+  geom_smooth(aes(color = Tone, linetype = Formant)) + # Plot F1 and F2 smooth lines
+  facet_grid(Seg ~ Tone) +
+  xlim(3, 27) + # the formant values from the very beginning and end of the segements are usually unreliable
+  coord_cartesian(ylim = c(300,2600)) +
+  theme_minimal_hgrid()
+```

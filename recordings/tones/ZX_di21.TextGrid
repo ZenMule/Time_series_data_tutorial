@@ -1,0 +1,122 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 4.641292517006803 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Syllables" 
+        xmin = 0 
+        xmax = 4.641292517006803 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.26307780793659324 
+            text = "" 
+        intervals [2]:
+            xmin = 0.26307780793659324 
+            xmax = 0.7599689045761654 
+            text = "ti21" 
+        intervals [3]:
+            xmin = 0.7599689045761654 
+            xmax = 1.9960693422206985 
+            text = "" 
+        intervals [4]:
+            xmin = 1.9960693422206985 
+            xmax = 2.585470487882025 
+            text = "ti21" 
+        intervals [5]:
+            xmin = 2.585470487882025 
+            xmax = 3.9436453056550973 
+            text = "" 
+        intervals [6]:
+            xmin = 3.9436453056550973 
+            xmax = 4.416708056334521 
+            text = "ti21" 
+        intervals [7]:
+            xmin = 4.416708056334521 
+            xmax = 4.641292517006803 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Segments" 
+        xmin = 0 
+        xmax = 4.641292517006803 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.26307780793659324 
+            text = "" 
+        intervals [2]:
+            xmin = 0.26307780793659324 
+            xmax = 0.2827011516684804 
+            text = "t" 
+        intervals [3]:
+            xmin = 0.2827011516684804 
+            xmax = 0.7599689045761654 
+            text = "i" 
+        intervals [4]:
+            xmin = 0.7599689045761654 
+            xmax = 1.9960693422206985 
+            text = "" 
+        intervals [5]:
+            xmin = 1.9960693422206985 
+            xmax = 2.02760685893266 
+            text = "t" 
+        intervals [6]:
+            xmin = 2.02760685893266 
+            xmax = 2.585470487882025 
+            text = "i" 
+        intervals [7]:
+            xmin = 2.585470487882025 
+            xmax = 3.9436453056550973 
+            text = "" 
+        intervals [8]:
+            xmin = 3.9436453056550973 
+            xmax = 3.968174485319956 
+            text = "t" 
+        intervals [9]:
+            xmin = 3.968174485319956 
+            xmax = 4.416708056334521 
+            text = "i" 
+        intervals [10]:
+            xmin = 4.416708056334521 
+            xmax = 4.641292517006803 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "Vowels" 
+        xmin = 0 
+        xmax = 4.641292517006803 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.2827011516684804 
+            text = "" 
+        intervals [2]:
+            xmin = 0.2827011516684804 
+            xmax = 0.7108802912256621 
+            text = "t21" 
+        intervals [3]:
+            xmin = 0.7108802912256621 
+            xmax = 2.02760685893266 
+            text = "" 
+        intervals [4]:
+            xmin = 2.02760685893266 
+            xmax = 2.5198449286378657 
+            text = "t21" 
+        intervals [5]:
+            xmin = 2.5198449286378657 
+            xmax = 3.968174485319956 
+            text = "" 
+        intervals [6]:
+            xmin = 3.968174485319956 
+            xmax = 4.366123369800522 
+            text = "t21" 
+        intervals [7]:
+            xmin = 4.366123369800522 
+            xmax = 4.641292517006803 
+            text = "" 

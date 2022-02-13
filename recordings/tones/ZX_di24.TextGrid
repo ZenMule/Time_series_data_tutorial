@@ -1,0 +1,206 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 10.954353741496599 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Syllables" 
+        xmin = 0 
+        xmax = 10.954353741496599 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.2946975351052339 
+            text = "" 
+        intervals [2]:
+            xmin = 0.2946975351052339 
+            xmax = 0.7759951919505881 
+            text = "ti24" 
+        intervals [3]:
+            xmin = 0.7759951919505881 
+            xmax = 2.1135981998250086 
+            text = "" 
+        intervals [4]:
+            xmin = 2.1135981998250086 
+            xmax = 2.5948174033458344 
+            text = "ti24" 
+        intervals [5]:
+            xmin = 2.5948174033458344 
+            xmax = 4.152758267787633 
+            text = "" 
+        intervals [6]:
+            xmin = 4.152758267787633 
+            xmax = 4.452931541403198 
+            text = "ti24" 
+        intervals [7]:
+            xmin = 4.452931541403198 
+            xmax = 7.171636999164648 
+            text = "" 
+        intervals [8]:
+            xmin = 7.171636999164648 
+            xmax = 7.627424179498764 
+            text = "ti24" 
+        intervals [9]:
+            xmin = 7.627424179498764 
+            xmax = 8.781725067085747 
+            text = "" 
+        intervals [10]:
+            xmin = 8.781725067085747 
+            xmax = 9.218804564644955 
+            text = "ti24" 
+        intervals [11]:
+            xmin = 9.218804564644955 
+            xmax = 10.374100146185373 
+            text = "" 
+        intervals [12]:
+            xmin = 10.374100146185373 
+            xmax = 10.699783896312175 
+            text = "ti24" 
+        intervals [13]:
+            xmin = 10.699783896312175 
+            xmax = 10.954353741496599 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Segments" 
+        xmin = 0 
+        xmax = 10.954353741496599 
+        intervals: size = 19 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.2946975351052339 
+            text = "" 
+        intervals [2]:
+            xmin = 0.2946975351052339 
+            xmax = 0.3278611545698431 
+            text = "t" 
+        intervals [3]:
+            xmin = 0.3278611545698431 
+            xmax = 0.7759951919505881 
+            text = "i" 
+        intervals [4]:
+            xmin = 0.7759951919505881 
+            xmax = 2.1135981998250086 
+            text = "" 
+        intervals [5]:
+            xmin = 2.1135981998250086 
+            xmax = 2.1407309214458006 
+            text = "t" 
+        intervals [6]:
+            xmin = 2.1407309214458006 
+            xmax = 2.5948174033458344 
+            text = "i" 
+        intervals [7]:
+            xmin = 2.5948174033458344 
+            xmax = 4.152758267787633 
+            text = "" 
+        intervals [8]:
+            xmin = 4.152758267787633 
+            xmax = 4.187622585686325 
+            text = "t" 
+        intervals [9]:
+            xmin = 4.187622585686325 
+            xmax = 4.452931541403198 
+            text = "i" 
+        intervals [10]:
+            xmin = 4.452931541403198 
+            xmax = 7.171636999164648 
+            text = "" 
+        intervals [11]:
+            xmin = 7.171636999164648 
+            xmax = 7.209052364714464 
+            text = "t" 
+        intervals [12]:
+            xmin = 7.209052364714464 
+            xmax = 7.627424179498764 
+            text = "i" 
+        intervals [13]:
+            xmin = 7.627424179498764 
+            xmax = 8.781725067085747 
+            text = "" 
+        intervals [14]:
+            xmin = 8.781725067085747 
+            xmax = 8.807235543596985 
+            text = "t" 
+        intervals [15]:
+            xmin = 8.807235543596985 
+            xmax = 9.218804564644955 
+            text = "i" 
+        intervals [16]:
+            xmin = 9.218804564644955 
+            xmax = 10.374100146185373 
+            text = "" 
+        intervals [17]:
+            xmin = 10.374100146185373 
+            xmax = 10.428388797855902 
+            text = "t" 
+        intervals [18]:
+            xmin = 10.428388797855902 
+            xmax = 10.699783896312175 
+            text = "i" 
+        intervals [19]:
+            xmin = 10.699783896312175 
+            xmax = 10.954353741496599 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "Vowels" 
+        xmin = 0 
+        xmax = 10.954353741496599 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.3278611545698431 
+            text = "" 
+        intervals [2]:
+            xmin = 0.3278611545698431 
+            xmax = 0.6849443257177749 
+            text = "t24" 
+        intervals [3]:
+            xmin = 0.6849443257177749 
+            xmax = 2.1407309214458006 
+            text = "" 
+        intervals [4]:
+            xmin = 2.1407309214458006 
+            xmax = 2.544575821704804 
+            text = "t24" 
+        intervals [5]:
+            xmin = 2.544575821704804 
+            xmax = 4.187622585686325 
+            text = "" 
+        intervals [6]:
+            xmin = 4.187622585686325 
+            xmax = 4.413663189796195 
+            text = "t24" 
+        intervals [7]:
+            xmin = 4.413663189796195 
+            xmax = 7.209052364714464 
+            text = "" 
+        intervals [8]:
+            xmin = 7.209052364714464 
+            xmax = 7.56408631409441 
+            text = "t24" 
+        intervals [9]:
+            xmin = 7.56408631409441 
+            xmax = 8.807235543596985 
+            text = "" 
+        intervals [10]:
+            xmin = 8.807235543596985 
+            xmax = 9.151952046202316 
+            text = "t24" 
+        intervals [11]:
+            xmin = 9.151952046202316 
+            xmax = 10.428388797855902 
+            text = "" 
+        intervals [12]:
+            xmin = 10.428388797855902 
+            xmax = 10.6510400592522 
+            text = "t24" 
+        intervals [13]:
+            xmin = 10.6510400592522 
+            xmax = 10.954353741496599 
+            text = "" 
