@@ -1,0 +1,38 @@
+"0","# Merge all data into one dataset"
+"0","(formant <- lapply(file_list, read_formant) %>% reduce(bind_rows))"
+"2","Warning:"
+"2"," 360 parsing failures.
+row col   expected     actual                        file
+  1  -- 15 columns 14 columns 'data/vowel/vowels_ait.txt'
+  2  -- 15 columns 14 columns 'data/vowel/vowels_ait.txt'
+  3  -- 15 columns 14 columns 'data/vowel/vowels_ait.txt'
+  4  -- 15 columns 14 columns 'data/vowel/vowels_ait.txt'
+  5  -- 15 columns 14 columns 'data/vowel/vowels_ait.txt'
+... ... .......... .......... ...........................
+See problems(...) for more details.
+
+"
+"2","Warning:"
+"2"," 360 parsing failures.
+row col   expected     actual                        file
+  1  -- 15 columns 14 columns 'data/vowel/vowels_aut.txt'
+  2  -- 15 columns 14 columns 'data/vowel/vowels_aut.txt'
+  3  -- 15 columns 14 columns 'data/vowel/vowels_aut.txt'
+  4  -- 15 columns 14 columns 'data/vowel/vowels_aut.txt'
+  5  -- 15 columns 14 columns 'data/vowel/vowels_aut.txt'
+... ... .......... .......... ...........................
+See problems(...) for more details.
+
+"
+"2","Warning:"
+"2"," 360 parsing failures.
+row col   expected     actual                        file
+  1  -- 15 columns 14 columns 'data/vowel/vowels_out.txt'
+  2  -- 15 columns 14 columns 'data/vowel/vowels_out.txt'
+  3  -- 15 columns 14 columns 'data/vowel/vowels_out.txt'
+  4  -- 15 columns 14 columns 'data/vowel/vowels_out.txt'
+  5  -- 15 columns 14 columns 'data/vowel/vowels_out.txt'
+... ... .......... .......... ...........................
+See problems(...) for more details.
+
+"

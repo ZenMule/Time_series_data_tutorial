@@ -1,0 +1,12 @@
+"0","ggplot(formant,"
+"0","       aes(x = t, y = F1)) +"
+"0","  geom_smooth(aes(color = Tone), linetype = 1) + # Plot F1 smooth lines"
+"0","  geom_smooth(aes(y = F2, color = Tone), linetype = 2) + # Plot F2 smooth lines"
+"0","  facet_grid(Seg ~ Tone) +"
+"0","  xlim(3, 27) + # the formant values from the very beginning and end of the segements are usually unreliable"
+"0","  coord_cartesian(ylim = c(300,2600)) +"
+"0","  theme_minimal_hgrid() #Use the minimal horizontal grid theme from cowplot package"
+"2","`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+"
+"2","`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+"

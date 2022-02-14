@@ -1,0 +1,4 @@
+"0","(f0_data <- read_delim(""data/tones_f0t.txt"", delim = ""\t"", col_types = cols("
+"0","  Segment = col_factor() #The Segment column is the column that includes the information of different tones so it should be formatted to factors instead of characters as in read_delim() default. "
+"0",")) %>% #"
+"0","  rename(Tone = Segment)) #Rename Segment column to Tone."

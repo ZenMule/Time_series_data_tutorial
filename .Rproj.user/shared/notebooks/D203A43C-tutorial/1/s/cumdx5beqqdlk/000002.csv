@@ -1,0 +1,7 @@
+"0","(f0_data_1 <- separate(f0_data,"
+"0","                    col = File_name,"
+"0","                    into = c(""Speaker"", ""Syllable""), #Separate them into two columns, one is named to Speaker, the other Syllable"
+"0","                    sep = ""_""))"
+"2","Warning:"
+"2"," Expected 2 pieces. Additional pieces discarded in 210 rows [961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, ...].
+"

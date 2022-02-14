@@ -1,0 +1,5 @@
+"0","(f0_data_norm <- mutate(group_by(f0_data_1, Speaker), #Group the data by Speaker so that the average will only be taken within each speaker's data."
+"0","                       F0_log = log(F0),"
+"0","                       F0_norm = (F0_log - mean(F0_log, na.rm = T))/sd(F0_log, na.rm = T) #Use na.rm = T to get rid of NAs, otherwise R will not calculate the standard deviation."
+"0","                       ) %>%"
+"0","  ungroup()) #After all are done, ungroup the data (this step is not obligatory, but I personally like to ungroup it.)"
